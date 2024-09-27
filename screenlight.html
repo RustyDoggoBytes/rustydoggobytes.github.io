@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RustyDoggoBytes - Screen Light!!!</title>
+  </head>
+  <body>
+    <main>
+      <label>
+      Preset
+        <select id="color-preset" onchange="updateColorInput()">
+          <option value="#FFFFFF">white</option>
+          <option value="#000">black</option>
+          <option value="#F4E99b">daylight</option>
+          <option value="#FDF4DC">warm white</option>
+          <option value="#F4FDFF">cool white</option>
+        </select>
+      </label>
+
+      <label>
+        Color:
+      <input id="color-input" type="color" onchange="changeBackgroundColor()"/>
+    </main>
+    </label>
+    <script>
+    function updateColorInput() {
+      const selectInput = document.getElementById('color-preset');
+      const colorInput = document.getElementById('color-input');
+      colorInput.value = selectInput.value;
+      changeBackgroundColor()
+    }
+
+    function changeBackgroundColor() {
+      const colorInput = document.getElementById('color-input');
+      const selectedColor = colorInput.value;
+      document.body.style.backgroundColor = selectedColor;
+    }
+    </script>
+    <footer style="position: fixed;  left: 0;  bottom: 0;  width: 100%; text-align: center;">
+      RustyDoggoBytes &copy; 2024
+    </footer>
+  </body>
+</html>
+
